@@ -1,0 +1,103 @@
+/* ---------- Base ---------- */
+:root {
+  --ink: #1c2321;
+  --paper: #fbfaf7;
+  --line: #d8d4c8;
+  --accent: #2f5d50;
+  --muted: #6b6f6a;
+  --serif: "Georgia", "Iowan Old Style", "Times New Roman", serif;
+  --sans: "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 720px;
+  padding: 3rem 1.5rem 4rem;
+  margin-inline: auto;
+}
+
+/* ---------- Header ---------- */
+header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.25rem;
+}
+
+header p {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+/* ---------- Sections ---------- */
+section {
+  margin-bottom: 2.25rem;
+}
+
+section h2 {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+section p {
+  margin: 0 0 0.4rem;
+}
+
+section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+section li {
+  margin-bottom: 0.35rem;
+}
+
+/* ---------- Footer / visitor counter ---------- */
+footer {
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.85rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+#visitor-count {
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+  body {
+    padding: 2rem 1.25rem 3rem;
+  }
+  header h1 {
+    font-size: 1.9rem;
+  }
+}
