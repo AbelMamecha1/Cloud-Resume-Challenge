@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'frontend/**'
 
 jobs:
   deploy:
@@ -22,18 +24,5 @@ jobs:
           az storage blob upload-batch \
             --account-name amamecharesume2026 \
             --destination '$web' \
-            --source . \
-            --pattern "*.html" \
-            --overwrite
-          az storage blob upload-batch \
-            --account-name amamecharesume2026 \
-            --destination '$web' \
-            --source . \
-            --pattern "*.css" \
-            --overwrite
-          az storage blob upload-batch \
-            --account-name amamecharesume2026 \
-            --destination '$web' \
-            --source . \
-            --pattern "*.js" \
+            --source frontend \
             --overwrite
