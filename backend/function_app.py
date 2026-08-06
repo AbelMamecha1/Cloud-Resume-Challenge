@@ -6,6 +6,13 @@ import json
 
 app = func.FunctionApp()
 
+
+def increment_count(entity):
+    """Takes an entity dict with a 'count' key and returns it incremented by 1."""
+    entity["count"] += 1
+    return entity
+
+
 @app.route(route="GetVisitorCount", auth_level=func.AuthLevel.ANONYMOUS)
 def GetVisitorCount(req: func.HttpRequest) -> func.HttpResponse:
     logging.info('Visitor counter function triggered.')
@@ -16,7 +23,7 @@ def GetVisitorCount(req: func.HttpRequest) -> func.HttpResponse:
         table_client = table_service.get_table_client(table_name="VisitorCount")
 
         entity = table_client.get_entity(partition_key="counter", row_key="1")
-        entity["count"] += 1
+        entity = increment_count(entity)
         table_client.update_entity(entity)
 
         response_body = json.dumps({"count": entity["count"]})
